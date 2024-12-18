@@ -2,6 +2,7 @@
 #include <locale.h>
 
 void Metro_Centrimetro_Milimetro();
+void ConversorDeTemperaturas();
 
 int main() {
     setlocale(LC_ALL, ""); 
@@ -9,6 +10,8 @@ int main() {
 
     printf("\n\n------------ Conversor de unidades em C ------------\n");
     printf("[1] Conversor de metro, centímetro e milímetro\n");
+
+    printf("[4] Conversor de metro, centímetro e milímetro\n");
     printf("------------------------------------------------------\n\n");
 
     printf("Escolha a opção: ");
@@ -18,6 +21,15 @@ int main() {
         case 1: 
             Metro_Centrimetro_Milimetro();
             break;
+    case 2:
+        break;
+
+    case 3:
+        break;
+    
+    case 4:
+        ConversorDeTemperaturas();
+        break;
 
         default:
             printf("opção inválida!");
@@ -61,6 +73,43 @@ void Metro_Centrimetro_Milimetro(){
 
         default:
             printf("opção inválida!");
+            break;
+    }
+}
+
+void ConversorDeTemperaturas(){
+    int opcao = 0;
+    float temperatura = 0;
+
+    printf("\n\n Indique a unidade da temperatura que você vai inserir\n");
+    printf("[1] Kelvin\n");
+    printf("[2] Celsius\n");
+    printf("[3] Fahrenheit\n");
+
+    printf("Escolha a opção: ");
+    scanf("%d", &opcao);
+
+    printf("Digite a temperatura: ");
+    scanf("%f", &temperatura);
+
+    switch(opcao){
+        case 1:
+            printf("\nValor digitado: %.2f K\n", temperatura);
+            printf("Valor em Celsius: %.2f °C\n", temperatura - 273.15);
+            printf("Valor em Fahrenheit: %.2f °F\n", (temperatura - 273.15) * 9/5 + 32);
+            break;
+        case 2:
+            printf("\nValor digitado: %.2f °C\n", temperatura);
+            printf("Valor em Kelvin: %.2f K\n", temperatura + 273.15);
+            printf("Valor em Fahrenheit: %.2f °F\n", temperatura * 9/5 + 32);
+            break;
+        case 3:
+            printf("\nValor digitado: %.2f °F\n", temperatura);
+            printf("Valor em Celsius: %.2f °C\n", (temperatura - 32) * 5/9);
+            printf("Valor em Kelvin: %.2f K\n", ((temperatura - 32) * 5/9) + 273.15);
+            break;
+        default:
+            printf("Opção inválida!\n");
             break;
     }
 }
