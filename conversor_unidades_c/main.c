@@ -77,6 +77,7 @@ void Metro_Centrimetro_Milimetro(){
     }
 }
 
+// Cria função para o menu de temperaturas
 void ConversorDeTemperaturas(){
     int opcao = 0;
     float temperatura = 0;
@@ -86,12 +87,15 @@ void ConversorDeTemperaturas(){
     printf("[2] Celsius\n");
     printf("[3] Fahrenheit\n");
 
+    //Pede ao usuário a qual a unidade inicial
     printf("Escolha a opção: ");
-    scanf("%d", &opcao);
+    scanf("%d", &opcao); 
 
+    //Pede ao usuário a temepratura
     printf("Digite a temperatura: ");
     scanf("%f", &temperatura);
 
+    //Verifica a opção e imprime as suas conversões para as outras unidades
     switch(opcao){
         case 1:
             printf("\nValor digitado: %.2f K\n", temperatura);
