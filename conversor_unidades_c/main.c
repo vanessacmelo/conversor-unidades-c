@@ -3,6 +3,7 @@
 
 void Metro_Centrimetro_Milimetro();
 void ConversorDeTemperaturas();
+void ConversorDeVelocidades();
 
 int main() {
     setlocale(LC_ALL, ""); 
@@ -12,6 +13,7 @@ int main() {
     printf("[1] Conversor de metro, centímetro e milímetro\n");
 
     printf("[4] Conversor de metro, centímetro e milímetro\n");
+    printf("[5] Conversor de km/h, m/s e mph\n");
     printf("------------------------------------------------------\n\n");
 
     printf("Escolha a opção: ");
@@ -29,6 +31,10 @@ int main() {
     
     case 4:
         ConversorDeTemperaturas();
+        break;
+
+    case 5:
+        ConversorDeVelocidades();
         break;
 
         default:
@@ -111,6 +117,43 @@ void ConversorDeTemperaturas(){
             printf("\nValor digitado: %.2f °F\n", temperatura);
             printf("Valor em Celsius: %.2f °C\n", (temperatura - 32) * 5/9);
             printf("Valor em Kelvin: %.2f K\n", ((temperatura - 32) * 5/9) + 273.15);
+            break;
+        default:
+            printf("Opção inválida!\n");
+            break;
+    }
+}
+
+void ConversorDeVelocidades(){
+    int opcao = 0;
+    float velocidade = 0;
+
+    printf("\n\n Indique a unidade da velocidade que você vai inserir\n");
+    printf("[1] m/s\n");
+    printf("[2] Km/h\n");
+    printf("[3] Mph\n");
+
+    printf("Escolha a opção: ");
+    scanf("%d", &opcao); 
+
+    printf("Digite a velocidade: ");
+    scanf("%f", &velocidade);
+
+    switch(opcao){
+        case 1:
+            printf("\nValor digitado: %.2f m/s\n", velocidade);
+            printf("Valor em Km/h: %.2f km/h\n", velocidade * 3.6);
+            printf("Valor em Mph: %.2f mph", velocidade * 2.237);
+            break;
+        case 2:
+            printf("\nValor digitado: %.2f km/h\n", velocidade);
+            printf("Valor em M/s: %.2f m/s\n", velocidade / 3.6);
+            printf("Valor em Mph: %.2f mph\n", velocidade / 1.609);
+            break;
+        case 3:
+            printf("\nValor digitado: %.2f mph\n", velocidade);
+            printf("Valor em M/s: %.2f m/s\n", velocidade / 2.237);
+            printf("Valor em Km/h: %.2f km/h\n", velocidade * 1.609);
             break;
         default:
             printf("Opção inválida!\n");
