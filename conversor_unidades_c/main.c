@@ -124,6 +124,7 @@ void ConversorDeTemperaturas(){
     }
 }
 
+// Função que solicita ao usuário um valor e unidade de velocidade e realiza a conversão para outras.
 void ConversorDeVelocidades(){
     int opcao = 0;
     float velocidade = 0;
@@ -133,12 +134,15 @@ void ConversorDeVelocidades(){
     printf("[2] Km/h\n");
     printf("[3] Mph\n");
 
+    //Pede ao usuário a qual a unidade inicial
     printf("Escolha a opção: ");
     scanf("%d", &opcao); 
 
+    //Pede ao usuário a velocidade
     printf("Digite a velocidade: ");
     scanf("%f", &velocidade);
 
+    //Verifica a opção e imprime as suas conversões para as outras unidades
     switch(opcao){
         case 1:
             printf("\nValor digitado: %.2f m/s\n", velocidade);
