@@ -11,7 +11,7 @@ int main() {
 
     printf("\n\n------------ Conversor de unidades em C ------------\n");
     printf("[1] Conversor de metro, centímetro e milímetro\n");
-
+    printf("[2] Conversor de litro, mililitro e metros cúbicos\n");
     printf("[4] Conversor de metro, centímetro e milímetro\n");
     printf("[5] Conversor de km/h, m/s e mph\n");
     printf("------------------------------------------------------\n\n");
@@ -24,6 +24,7 @@ int main() {
             Metro_Centrimetro_Milimetro();
             break;
     case 2:
+        transformVol();
         break;
 
     case 3:
@@ -163,13 +164,13 @@ void ConversorDeVelocidades(){
             printf("Opção inválida!\n");
             break;
     }
-
-    #include <stdio.h>
+}
 
 // Função para conversão de volume
-void transformVol(double n) {
+void transformVol() {
     int choice;
     double value;
+    double n;
 
     // Exibindo as opções de unidades para litros e metros cúbicos
     printf("Selecione a unidade para conversao:\n");
@@ -188,6 +189,10 @@ void transformVol(double n) {
     printf("13. Quilômetro cúbico (km³)\n");
     printf("14. Metro cúbico (m³)\n");
     
+
+    printf("Digite o valor: \n");
+    scanf("%lf", &n);
+
     // Recebendo a escolha do usuário
     printf("Escolha a unidade (1-14): ");
     scanf("%d", &choice);
@@ -253,5 +258,4 @@ void transformVol(double n) {
             printf("Escolha invalida!\n");
             break;
     }
-}
 }
