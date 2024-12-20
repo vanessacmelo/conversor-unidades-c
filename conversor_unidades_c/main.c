@@ -11,7 +11,7 @@ int main() {
 
     printf("\n\n------------ Conversor de unidades em C ------------\n");
     printf("[1] Conversor de metro, centímetro e milímetro\n");
-
+    printf("[2] Conversor de litro, mililitro e metros cúbicos\n");
     printf("[4] Conversor de metro, centímetro e milímetro\n");
     printf("[5] Conversor de km/h, m/s e mph\n");
     printf("------------------------------------------------------\n\n");
@@ -24,6 +24,7 @@ int main() {
             Metro_Centrimetro_Milimetro();
             break;
     case 2:
+        transformVol();
         break;
 
     case 3:
@@ -161,6 +162,100 @@ void ConversorDeVelocidades(){
             break;
         default:
             printf("Opção inválida!\n");
+            break;
+    }
+}
+
+// Função para conversão de volume
+void transformVol() {
+    int choice;
+    double value;
+    double n;
+
+    // Exibindo as opções de unidades para litros e metros cúbicos
+    printf("Selecione a unidade para conversao:\n");
+    printf("1. Mililitro (ml)\n");
+    printf("2. Centilitro (cl)\n");
+    printf("3. Decilitro (dl)\n");
+    printf("4. Litro (L)\n");
+    printf("5. Decalitro (dal)\n");
+    printf("6. Hectolitro (hl)\n");
+    printf("7. Quilolitro (kl)\n");
+    printf("8. Decímetro cúbico (dm³)\n");
+    printf("9. Centímetro cúbico (cm³)\n");
+    printf("10. Milímetro cúbico (mm³)\n");
+    printf("11. Decâmetro cúbico (dam³)\n");
+    printf("12. Hectômetro cúbico (hm³)\n");
+    printf("13. Quilômetro cúbico (km³)\n");
+    printf("14. Metro cúbico (m³)\n");
+    
+
+    printf("Digite o valor: \n");
+    scanf("%lf", &n);
+
+    // Recebendo a escolha do usuário
+    printf("Escolha a unidade (1-14): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            value = n * 1000;  
+            printf("%lf ml\n", value);
+            break;
+        case 2:
+            value = n * 10000; 
+            printf("%lf cl\n", value);
+            break;
+        case 3:
+            value = n * 100000; 
+            printf("%lf dl\n", value);
+            break;
+        case 4:
+            value = n;  
+            printf("%lf L\n", value);
+            break;
+        case 5:
+            value = n * 10; 
+            printf("%lf dal\n", value);
+            break;
+        case 6:
+            value = n * 100;  
+            printf("%lf hl\n", value);
+            break;
+        case 7:
+            value = n * 1000; 
+            printf("%lf kl\n", value);
+            break;
+        case 8:
+            value = n * 1000; 
+            printf("%lf dm³\n", value);
+            break;
+        case 9:
+            value = n * 1000000;  
+            printf("%lf cm³\n", value);
+            break;
+        case 10:
+            value = n * 1000000000;  
+            printf("%lf mm³\n", value);
+            break;
+        case 11:
+            value = n / 1000;  
+            printf("%lf dam³\n", value);
+            break;
+        case 12:
+            value = n / 1000000;  
+            printf("%lf hm³\n", value);
+            break;
+        case 13:
+            value = n / 1000000000;  
+            printf("%lf km³\n", value);
+            break;
+        case 14:
+            value = n / 1000;  
+            printf("%lf m³\n", value);
+            break;
+        default:
+            printf("Escolha invalida!\n");
             break;
     }
 }
