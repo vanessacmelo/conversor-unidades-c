@@ -76,7 +76,8 @@ int main() {
 
     } while (continuar == 's' || continuar == 'S');
 
-    printf("Fim do programa. Obrigado por usá-lo!\n");
+    printf("\n\n\n\n\n");
+    printf("                                   Fim do programa. Obrigado por usá-lo!\n\n\n\n\n");
 
     return 0;
 }
@@ -94,11 +95,11 @@ void ConversorDeComprimento () {
     printf("[2] Centímetro\n");
     printf("[3] Milímetro\n");
 
-    printf("\nDigite uma opção: ");
+    printf("\nDigite a unidade do valor (1-3): ");
     scanf("%d", &opcao);  // escolhendo a opção
 
 
-    printf("Digite o valor do comprimento: ");
+    printf("Digite o valor da grandeza: ");
     scanf("%f", &grandeza);  // escolhendo a opção
 
     system("clear");
@@ -142,10 +143,10 @@ void ConversorDeTemperatura () {
     printf("[2] Celsius\n");
     printf("[3] Fahrenheit\n");
 
-    printf("\nDigite uma opção: ");
+    printf("\nDigite a unidade do valor (1-3): ");
     scanf("%d", &opcao);  // escolhendo a opção
 
-    printf("Digite o valor da temperatura: ");
+    printf("Digite o valor da grandeza: ");
     scanf("%f", &temperatura);
 
     system("clear");
@@ -191,11 +192,11 @@ void ConversorDeVelocidade () {
     printf("[3] Mph\n");
 
     //Pede ao usuário a qual a unidade inicial
-    printf("Digite uma opção: ");
+    printf("\nDigite a unidade do valor (1-3): ");
     scanf("%d", &opcao);
 
     //Pede ao usuário a velocidade
-    printf("Digite o valor da velocidade: ");
+    printf("Digite o valor da grandeza: ");
     scanf("%f", &velocidade);
 
     system("clear");
@@ -232,30 +233,37 @@ void ConversorDeVolume () {
     double value;
     double n;
 
-    // Exibindo as opções de unidades para litros e metros cúbicos
-    printf("Selecione a unidade para conversão:\n");
-    printf("1. Mililitro (ml)\n");
-    printf("2. Centilitro (cl)\n");
-    printf("3. Decilitro (dl)\n");
-    printf("4. Litro (L)\n");
-    printf("5. Decalitro (dal)\n");
-    printf("6. Hectolitro (hl)\n");
-    printf("7. Quilolitro (kl)\n");
-    printf("8. Decímetro cúbico (dm³)\n");
-    printf("9. Centímetro cúbico (cm³)\n");
-    printf("10. Milímetro cúbico (mm³)\n");
-    printf("11. Decâmetro cúbico (dam³)\n");
-    printf("12. Hectômetro cúbico (hm³)\n");
-    printf("13. Quilômetro cúbico (km³)\n");
-    printf("14. Metro cúbico (m³)\n");
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Volume)                                       ");
+    printf("\n========================================================================================\n\n");
 
-    printf("Digite o valor: \n");
+    printf("Indique a grandeza do valor que você vai inserir.\n");
+    printf("[1] Mililitro (ml)\n");
+    printf("[2] Centilitro (cl)\n");
+    printf("[3] Decilitro (dl)\n");
+    printf("[4] Litro (L)\n");
+    printf("[5] Decalitro (dal)\n");
+    printf("[6] Hectolitro (hl)\n");
+    printf("[7] Quilolitro (kl)\n");
+    printf("[8] Decímetro cúbico (dm³)\n");
+    printf("[9] Centímetro cúbico (cm³)\n");
+    printf("[10] Milímetro cúbico (mm³)\n");
+    printf("[11] Decâmetro cúbico (dam³)\n");
+    printf("[12] Hectômetro cúbico (hm³)\n");
+    printf("[13] Quilômetro cúbico (km³)\n");
+    printf("[14] Metro cúbico (m³)\n");
+
+    printf("\nDigite a unidade do valor para converter (1-14): ");
+    scanf("%d", &choice);
+
+    printf("Digite o valor da grandeza: ");
     scanf("%lf", &n);
 
+    system("clear");
 
-    // Recebendo a escolha do usuário
-    printf("Escolha a unidade (1-14): ");
-    scanf("%d", &choice);
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Volume)                                       ");
+    printf("\n========================================================================================\n\n");
 
     switch (choice) {
         case 1:
@@ -315,7 +323,7 @@ void ConversorDeVolume () {
             printf("%lf m³\n", value);
             break;
         default:
-            printf("Escolha inválida!\n");
+            printf("Opção inválida!\n");
             break;
     }
 }
@@ -324,30 +332,42 @@ void ConversorDeArmazenamento () {
     double valor, resultado;
     int de, para;
 
-    printf("Conversor de Unidades de Armazenamento\n");
-    printf("1. Bits\n");
-    printf("2. Bytes\n");
-    printf("3. Kilobytes (KB)\n");
-    printf("4. Megabytes (MB)\n");
-    printf("5. Gigabytes (GB)\n");
-    printf("6. Terabytes (TB)\n");
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Armazenamento)                                      ");
+    printf("\n========================================================================================\n\n");
 
-    printf("Escolha a unidade de origem (1-6): ");
+    printf("Indique a grandeza do valor que você vai inserir.\n");
+    printf("[1] Bits\n");
+    printf("[2] Bytes\n");
+    printf("[3] Kilobytes (KB)\n");
+    printf("[4] Megabytes (MB)\n");
+    printf("[5] Gigabytes (GB)\n");
+    printf("[6] Terabytes (TB)\n");
+
+    printf("\nDigite a unidade do valor (1-6): ");
     scanf("%d", &de);
+
     if (de < 1 || de > 6) {
-        printf("Unidade de origem inválida.\n");
+        printf("\nOpção inválida!\n");
         return;
     }
 
-    printf("Digite o valor: ");
+    printf("Digite o valor da grandeza: ");
     scanf("%lf", &valor);
 
-    printf("Escolha a unidade de destino (1-6): ");
+    printf("Escolha para qual unidade você deseja converter (1-6): ");
     scanf("%d", &para);
+
     if (para < 1 || para > 6) {
-        printf("Unidade de destino inválida.\n");
+        printf("\nOpção inválida!\n");
         return; 
     }
+
+    system("clear");
+
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Armazenamento)                                      ");
+    printf("\n========================================================================================\n\n");
 
     long long multiplicadores[] = {
         1LL,                          // Bits
@@ -360,5 +380,5 @@ void ConversorDeArmazenamento () {
 
     resultado = valor * multiplicadores[de - 1] / multiplicadores[para - 1];
 
-    printf("Resultado: %.6lf\n", resultado);
+    printf("# Resultado: %.6lf\n", resultado);
 }
