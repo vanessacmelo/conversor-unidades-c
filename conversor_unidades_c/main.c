@@ -4,6 +4,8 @@
 void Metro_Centrimetro_Milimetro();
 void ConversorDeTemperaturas();
 void ConversorDeVelocidades();
+void transformVol();
+void ConversorDeArmazenamento();
 
 int main() {
     setlocale(LC_ALL, ""); 
@@ -14,7 +16,7 @@ int main() {
     printf("[2] Conversor de litro, mililitro e metros cúbicos\n");
     printf("[4] Conversor de metro, centímetro e milímetro\n");
     printf("[5] Conversor de km/h, m/s e mph\n");
-    printf("------------------------------------------------------\n\n");
+    printf("[9] Conversor de unidade de armazenamento\n");
 
     printf("Escolha a opção: ");
     scanf("%d", &opcao); // escolhendo a opção
@@ -23,29 +25,26 @@ int main() {
         case 1: 
             Metro_Centrimetro_Milimetro();
             break;
-    case 2:
-        transformVol();
-        break;
-
-    case 3:
-        break;
-    
-    case 4:
-        ConversorDeTemperaturas();
-        break;
-
-    case 5:
-        ConversorDeVelocidades();
-        break;
-
+        case 2:
+            transformVol();
+            break;
+        case 4:
+            ConversorDeTemperaturas();
+            break;
+        case 5:
+            ConversorDeVelocidades();
+            break;
+        case 9:
+            ConversorDeArmazenamento();
+            break;
         default:
-            printf("opção inválida!");
+            printf("Opção inválida!\n");
             break;
     }
     return 0;
 }
 
-// funções do menu
+// Funções do menu
 void Metro_Centrimetro_Milimetro(){
     int opcao = 0;
     float grandeza = 0;
@@ -56,10 +55,12 @@ void Metro_Centrimetro_Milimetro(){
     printf("[3] Milímetro\n");
 
     printf("Escolha a opção: ");
-    scanf("%d", &opcao); // escolhendo a opção
+    scanf("%d", &opcao);  // escolhendo a opção
 
-    printf("Digite a garandeza: ");
-    scanf("%f", &grandeza); // escolhendo a opção
+
+    printf("Digite a grandeza: ");
+    scanf("%f", &grandeza);  // escolhendo a opção
+
 
     switch(opcao){
         case 1: 
@@ -68,18 +69,17 @@ void Metro_Centrimetro_Milimetro(){
             printf("Valor em milímetros: %.2f mm\n", grandeza * 1000);
             break;
         case 2: 
-            printf("\nValor digitado %.2f em Centímetro\n", grandeza);
+            printf("\nValor digitado %.2f em centímetros\n", grandeza);
             printf("Valor em metros: %.2f m\n", grandeza / 100);
             printf("Valor em milímetros: %.2f mm\n", grandeza * 10);
             break;
         case 3: 
-            printf("\nValor digitado %.2f em Milímetro\n", grandeza);
+            printf("\nValor digitado %.2f em milímetros\n", grandeza);
             printf("Valor em metros: %.2f m\n", grandeza / 1000);
             printf("Valor em centímetros: %.2f cm\n", grandeza / 10);
             break;
-
         default:
-            printf("opção inválida!");
+            printf("Opção inválida!\n");
             break;
     }
 }
@@ -96,7 +96,7 @@ void ConversorDeTemperaturas(){
 
     //Pede ao usuário a qual a unidade inicial
     printf("Escolha a opção: ");
-    scanf("%d", &opcao); 
+    scanf("%d", &opcao);
 
     //Pede ao usuário a temepratura
     printf("Digite a temperatura: ");
@@ -137,7 +137,7 @@ void ConversorDeVelocidades(){
 
     //Pede ao usuário a qual a unidade inicial
     printf("Escolha a opção: ");
-    scanf("%d", &opcao); 
+    scanf("%d", &opcao);
 
     //Pede ao usuário a velocidade
     printf("Digite a velocidade: ");
@@ -148,7 +148,7 @@ void ConversorDeVelocidades(){
         case 1:
             printf("\nValor digitado: %.2f m/s\n", velocidade);
             printf("Valor em Km/h: %.2f km/h\n", velocidade * 3.6);
-            printf("Valor em Mph: %.2f mph", velocidade * 2.237);
+            printf("Valor em Mph: %.2f mph\n", velocidade * 2.237);
             break;
         case 2:
             printf("\nValor digitado: %.2f km/h\n", velocidade);
@@ -173,7 +173,7 @@ void transformVol() {
     double n;
 
     // Exibindo as opções de unidades para litros e metros cúbicos
-    printf("Selecione a unidade para conversao:\n");
+    printf("Selecione a unidade para conversão:\n");
     printf("1. Mililitro (ml)\n");
     printf("2. Centilitro (cl)\n");
     printf("3. Decilitro (dl)\n");
@@ -188,10 +188,10 @@ void transformVol() {
     printf("12. Hectômetro cúbico (hm³)\n");
     printf("13. Quilômetro cúbico (km³)\n");
     printf("14. Metro cúbico (m³)\n");
-    
 
     printf("Digite o valor: \n");
     scanf("%lf", &n);
+
 
     // Recebendo a escolha do usuário
     printf("Escolha a unidade (1-14): ");
@@ -255,7 +255,50 @@ void transformVol() {
             printf("%lf m³\n", value);
             break;
         default:
-            printf("Escolha invalida!\n");
+            printf("Escolha inválida!\n");
             break;
     }
+}
+
+void ConversorDeArmazenamento() {
+    double valor, resultado;
+    int de, para;
+
+    printf("Conversor de Unidades de Armazenamento\n");
+    printf("1. Bits\n");
+    printf("2. Bytes\n");
+    printf("3. Kilobytes (KB)\n");
+    printf("4. Megabytes (MB)\n");
+    printf("5. Gigabytes (GB)\n");
+    printf("6. Terabytes (TB)\n");
+
+    printf("Escolha a unidade de origem (1-6): ");
+    scanf("%d", &de);
+    if (de < 1 || de > 6) {
+        printf("Unidade de origem inválida.\n");
+        return;
+    }
+
+    printf("Digite o valor: ");
+    scanf("%lf", &valor);
+
+    printf("Escolha a unidade de destino (1-6): ");
+    scanf("%d", &para);
+    if (para < 1 || para > 6) {
+        printf("Unidade de destino inválida.\n");
+        return; 
+    }
+
+    long long multiplicadores[] = {
+        1LL,                          // Bits
+        8LL,                          // Bytes
+        8LL * 1024,                  // KB
+        8LL * 1024 * 1024,           // MB
+        8LL * 1024 * 1024 * 1024,    // GB
+        8LL * 1024 * 1024 * 1024 * 1024 // TB
+    };
+
+    resultado = valor * multiplicadores[de - 1] / multiplicadores[para - 1];
+
+    printf("Resultado: %.6lf\n", resultado);
 }
