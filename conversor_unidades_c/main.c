@@ -11,98 +11,117 @@ void ConversorDeArmazenamento();
 int main() {
     setlocale(LC_ALL, "portuguese"); 
     int opcao = 0;
+    char continuar = 's';
 
-    printf("\n\n========================================================================================\n");
-    printf("                                   Conversor De Unidades                                       ");
-    printf("\n========================================================================================\n\n");
+    do {
+        printf("\n\n========================================================================================\n");
+        printf("                                   Conversor De Unidades                                       ");
+        printf("\n========================================================================================\n\n");
 
-    printf("# DESCRIÇÃO:\n");
-    printf("  - Escolha o conversor de seu interesse especificando o número \n    entre chaves [XX], dentre as opções abaixo.\n\n");
+        printf("# DESCRIÇÃO:\n");
+        printf("  - Escolha o conversor de seu interesse especificando o número \n    entre chaves [XX], dentre as opções abaixo.\n\n");
 
-    printf("[1] Conversor de unidades de comprimento (metro, centímetro e milímetro)\n");
-    printf("[2] Conversor de unidades de volume (litro, mililitro e metros cúbicos)\n");
-    printf("[3] Conversor de unidades de massa (kilograma, grama e tonelada)\n");
-    printf("[4] Conversor de unidades de temperatura (celcius, kelvin e fahrenheit)\n");
-    printf("[5] Conversor de unidades de velocidade (km/h, m/s e mph)\n");
-    printf("[6] Conversor de unidades de potência (watt, kilowatt e cavalo-vapor)\n");
-    printf("[7] Conversor de unidades de área (metro quadrado, centímetro )\n");
-    printf("[8] Conversor de unidades de tempo (segundo, minuto e hora)\n");
-    printf("[9] Conversor de unidades de armazenamento (bits, bytes e kilobytes)\n");
+        printf("[1] Conversor de unidades de comprimento (metro, centímetro e milímetro)\n");
+        printf("[2] Conversor de unidades de volume (litro, mililitro e metros cúbicos)\n");
+        printf("[3] Conversor de unidades de massa (kilograma, grama e tonelada)\n");
+        printf("[4] Conversor de unidades de temperatura (celcius, kelvin e fahrenheit)\n");
+        printf("[5] Conversor de unidades de velocidade (km/h, m/s e mph)\n");
+        printf("[6] Conversor de unidades de potência (watt, kilowatt e cavalo-vapor)\n");
+        printf("[7] Conversor de unidades de área (metro quadrado, centímetro )\n");
+        printf("[8] Conversor de unidades de tempo (segundo, minuto e hora)\n");
+        printf("[9] Conversor de unidades de armazenamento (bits, bytes e kilobytes)\n");
 
-    printf("\nEscolha a opção: ");
-    scanf("%d", &opcao);
+        printf("\nEscolha a opção: ");
+        scanf("%d", &opcao);
 
-    system("clear");
+        system("clear");
 
-    switch (opcao) {
-        case 1:
-            ConversorDeComprimento();
-            break;
-        case 2:
-            ConversorDeVolume();
-            break;
-        case 3:
-            //conversor de massa
-            break;
-        case 4:
-            ConversorDeTemperatura();
-            break;
-        case 5:
-            ConversorDeVelocidade();
-            break;
-        case 6:
-            //conversor de potencia
-            break;
-        case 7:
-            //conversor de area
-            break;
-        case 8:
-            //conversor de tempo
-            break;
-        case 9:
-            ConversorDeArmazenamento();
-            break;
-        default:
-            printf("Opção inválida!\n");
-            break;
-    }
+        switch (opcao) {
+            case 1:
+                ConversorDeComprimento();
+                break;
+            case 2:
+                ConversorDeVolume();
+                break;
+            case 3:
+                //conversor de massa
+                break;
+            case 4:
+                ConversorDeTemperatura();
+                break;
+            case 5:
+                ConversorDeVelocidade();
+                break;
+            case 6:
+                //conversor de potencia
+                break;
+            case 7:
+                //conversor de area
+                break;
+            case 8:
+                //conversor de tempo
+                break;
+            case 9:
+                ConversorDeArmazenamento();
+                break;
+            default:
+                printf("Opção inválida!\n");
+                break;
+        }
+
+        printf("\nDeseja retornar ao menu principal? (s/n): ");
+        scanf(" %c", &continuar);
+
+        system("clear");
+
+    } while (continuar == 's' || continuar == 'S');
+
+    printf("Fim do programa. Obrigado por usá-lo!\n");
 
     return 0;
 }
 
-// Funções do menu
 void ConversorDeComprimento () {
-    int opcao = 0;
+    int escolhaGrandeza = 0;
     float grandeza = 0;
 
-    printf("\n\n Indique a grandeza do valor que você vai inserir\n");
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Comprimento)                                       ");
+    printf("\n========================================================================================\n\n");
+
+    printf("Indique a grandeza do valor que você vai inserir.\n");
     printf("[1] Metro\n");
     printf("[2] Centímetro\n");
     printf("[3] Milímetro\n");
 
-    printf("Escolha a opção: ");
-    scanf("%d", &opcao);  // escolhendo a opção
+    printf("\nDigite a sua opção: ");
+    scanf("%d", &escolhaGrandeza);  // escolhendo a opção
 
 
-    printf("Digite a grandeza: ");
+    printf("Digite o valor da grandeza: ");
     scanf("%f", &grandeza);  // escolhendo a opção
 
+    system("clear");
 
-    switch(opcao){
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Comprimento)                                       ");
+    printf("\n========================================================================================\n\n");
+
+    switch (escolhaGrandeza) {
         case 1: 
-            printf("\nValor digitado %.2f em metros\n", grandeza);
-            printf("Valor em centímetros: %.2f cm\n", grandeza * 100);
-            printf("Valor em milímetros: %.2f mm\n", grandeza * 1000);
+            printf("\n# Valor digitado %.2f em metros\n", grandeza);
+            printf("  - Valor em centímetros: %.2f cm\n", grandeza * 100);
+            printf("  - Valor em milímetros: %.2f mm\n", grandeza * 1000);
             break;
         case 2: 
-            printf("\nValor digitado %.2f em centímetros\n", grandeza);
-            printf("Valor em metros: %.2f m\n", grandeza / 100);
-            printf("Valor em milímetros: %.2f mm\n", grandeza * 10);
+            printf("\n# Valor digitado %.2f em centímetros\n", grandeza);
+            printf("  - Valor em metros: %.2f m\n", grandeza / 100);
+            printf("  - Valor em milímetros: %.2f mm\n", grandeza * 10);
             break;
         case 3: 
-            printf("\nValor digitado %.2f em milímetros\n", grandeza);
-            printf("Valor em metros: %.2f m\n", grandeza / 1000);
-            printf("Valor em centímetros: %.2f cm\n", grandeza / 10);
+            printf("\n# Valor digitado %.2f em milímetros\n", grandeza);
+            printf("  - Valor em metros: %.2f m\n", grandeza / 1000);
+            printf("  - Valor em centímetros: %.2f cm\n", grandeza / 10);
             break;
         default:
             printf("Opção inválida!\n");
@@ -110,7 +129,6 @@ void ConversorDeComprimento () {
     }
 }
 
-// Cria função para o menu de temperaturas
 void ConversorDeTemperatura () {
     int opcao = 0;
     float temperatura = 0;
@@ -151,7 +169,6 @@ void ConversorDeTemperatura () {
     }
 }
 
-// Função que solicita ao usuário um valor e unidade de velocidade e realiza a conversão para outras.
 void ConversorDeVelocidade () {
     int opcao = 0;
     float velocidade = 0;
@@ -192,7 +209,6 @@ void ConversorDeVelocidade () {
     }
 }
 
-// Função para conversão de volume
 void ConversorDeVolume () {
     int choice;
     double value;
