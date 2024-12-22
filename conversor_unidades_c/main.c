@@ -94,11 +94,11 @@ void ConversorDeComprimento () {
     printf("[2] Centímetro\n");
     printf("[3] Milímetro\n");
 
-    printf("\nDigite a sua opção: ");
+    printf("\nDigite uma opção: ");
     scanf("%d", &opcao);  // escolhendo a opção
 
 
-    printf("Digite o valor da grandeza: ");
+    printf("Digite o valor do comprimento: ");
     scanf("%f", &grandeza);  // escolhendo a opção
 
     system("clear");
@@ -142,10 +142,10 @@ void ConversorDeTemperatura () {
     printf("[2] Celsius\n");
     printf("[3] Fahrenheit\n");
 
-    printf("\nDigite a sua opção: ");
+    printf("\nDigite uma opção: ");
     scanf("%d", &opcao);  // escolhendo a opção
 
-    printf("Digite a temperatura: ");
+    printf("Digite o valor da temperatura: ");
     scanf("%f", &temperatura);
 
     system("clear");
@@ -181,35 +181,45 @@ void ConversorDeVelocidade () {
     int opcao = 0;
     float velocidade = 0;
 
-    printf("\n\n Indique a unidade da velocidade que você vai inserir\n");
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Velocidade)                                       ");
+    printf("\n========================================================================================\n\n");
+
+    printf("Indique a grandeza do valor que você vai inserir.\n");
     printf("[1] m/s\n");
     printf("[2] Km/h\n");
     printf("[3] Mph\n");
 
     //Pede ao usuário a qual a unidade inicial
-    printf("Escolha a opção: ");
+    printf("Digite uma opção: ");
     scanf("%d", &opcao);
 
     //Pede ao usuário a velocidade
-    printf("Digite a velocidade: ");
+    printf("Digite o valor da velocidade: ");
     scanf("%f", &velocidade);
+
+    system("clear");
+
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Velocidade)                                       ");
+    printf("\n========================================================================================\n\n");
 
     //Verifica a opção e imprime as suas conversões para as outras unidades
     switch(opcao){
         case 1:
-            printf("\nValor digitado: %.2f m/s\n", velocidade);
-            printf("Valor em Km/h: %.2f km/h\n", velocidade * 3.6);
-            printf("Valor em Mph: %.2f mph\n", velocidade * 2.237);
+            printf("\n# Valor digitado: %.2f m/s\n", velocidade);
+            printf("  - Valor em Km/h: %.2f km/h\n", velocidade * 3.6);
+            printf("  - Valor em Mph: %.2f mph\n", velocidade * 2.237);
             break;
         case 2:
-            printf("\nValor digitado: %.2f km/h\n", velocidade);
-            printf("Valor em M/s: %.2f m/s\n", velocidade / 3.6);
-            printf("Valor em Mph: %.2f mph\n", velocidade / 1.609);
+            printf("\n# Valor digitado: %.2f km/h\n", velocidade);
+            printf("  - Valor em M/s: %.2f m/s\n", velocidade / 3.6);
+            printf("  - Valor em Mph: %.2f mph\n", velocidade / 1.609);
             break;
         case 3:
-            printf("\nValor digitado: %.2f mph\n", velocidade);
-            printf("Valor em M/s: %.2f m/s\n", velocidade / 2.237);
-            printf("Valor em Km/h: %.2f km/h\n", velocidade * 1.609);
+            printf("\n# Valor digitado: %.2f mph\n", velocidade);
+            printf("  - Valor em M/s: %.2f m/s\n", velocidade / 2.237);
+            printf("  - Valor em Km/h: %.2f km/h\n", velocidade * 1.609);
             break;
         default:
             printf("Opção inválida!\n");
