@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include <locale.h>
 
 void ConversorDeComprimento();
@@ -20,25 +21,43 @@ int main() {
 
     printf("[1] Conversor de unidades de comprimento (metro, centímetro e milímetro)\n");
     printf("[2] Conversor de unidades de volume (litro, mililitro e metros cúbicos)\n");
+    printf("[3] Conversor de unidades de massa (kilograma, grama e tonelada)\n");
     printf("[4] Conversor de unidades de temperatura (celcius, kelvin e fahrenheit)\n");
     printf("[5] Conversor de unidades de velocidade (km/h, m/s e mph)\n");
+    printf("[6] Conversor de unidades de potência (watt, kilowatt e cavalo-vapor)\n");
+    printf("[7] Conversor de unidades de área (metro quadrado, centímetro )\n");
+    printf("[8] Conversor de unidades de tempo (segundo, minuto e hora)\n");
     printf("[9] Conversor de unidades de armazenamento (bits, bytes e kilobytes)\n");
 
     printf("\nEscolha a opção: ");
-    scanf("%d", &opcao); // escolhendo a opção
+    scanf("%d", &opcao);
 
-    switch(opcao){
-        case 1: 
+    system("clear");
+
+    switch (opcao) {
+        case 1:
             ConversorDeComprimento();
             break;
         case 2:
             ConversorDeVolume();
+            break;
+        case 3:
+            //conversor de massa
             break;
         case 4:
             ConversorDeTemperatura();
             break;
         case 5:
             ConversorDeVelocidade();
+            break;
+        case 6:
+            //conversor de potencia
+            break;
+        case 7:
+            //conversor de area
+            break;
+        case 8:
+            //conversor de tempo
             break;
         case 9:
             ConversorDeArmazenamento();
@@ -47,6 +66,7 @@ int main() {
             printf("Opção inválida!\n");
             break;
     }
+
     return 0;
 }
 
