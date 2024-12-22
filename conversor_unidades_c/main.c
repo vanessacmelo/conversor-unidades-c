@@ -82,7 +82,7 @@ int main() {
 }
 
 void ConversorDeComprimento () {
-    int escolhaGrandeza = 0;
+    int opcao = 0;
     float grandeza = 0;
 
     printf("\n\n========================================================================================\n");
@@ -95,7 +95,7 @@ void ConversorDeComprimento () {
     printf("[3] Milímetro\n");
 
     printf("\nDigite a sua opção: ");
-    scanf("%d", &escolhaGrandeza);  // escolhendo a opção
+    scanf("%d", &opcao);  // escolhendo a opção
 
 
     printf("Digite o valor da grandeza: ");
@@ -107,7 +107,7 @@ void ConversorDeComprimento () {
     printf("                         Conversor De Unidades (Comprimento)                                       ");
     printf("\n========================================================================================\n\n");
 
-    switch (escolhaGrandeza) {
+    switch (opcao) {
         case 1: 
             printf("\n# Valor digitado %.2f em metros\n", grandeza);
             printf("  - Valor em centímetros: %.2f cm\n", grandeza * 100);
@@ -133,35 +133,43 @@ void ConversorDeTemperatura () {
     int opcao = 0;
     float temperatura = 0;
 
-    printf("\n\n Indique a unidade da temperatura que você vai inserir\n");
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Temperatura)                                      ");
+    printf("\n========================================================================================\n\n");
+
+    printf("Indique a grandeza do valor que você vai inserir.\n");
     printf("[1] Kelvin\n");
     printf("[2] Celsius\n");
     printf("[3] Fahrenheit\n");
 
-    //Pede ao usuário a qual a unidade inicial
-    printf("Escolha a opção: ");
-    scanf("%d", &opcao);
+    printf("\nDigite a sua opção: ");
+    scanf("%d", &opcao);  // escolhendo a opção
 
-    //Pede ao usuário a temepratura
     printf("Digite a temperatura: ");
     scanf("%f", &temperatura);
+
+    system("clear");
+
+    printf("\n\n========================================================================================\n");
+    printf("                         Conversor De Unidades (Temperatura)                                      ");
+    printf("\n========================================================================================\n\n");
 
     //Verifica a opção e imprime as suas conversões para as outras unidades
     switch(opcao){
         case 1:
-            printf("\nValor digitado: %.2f K\n", temperatura);
-            printf("Valor em Celsius: %.2f °C\n", temperatura - 273.15);
-            printf("Valor em Fahrenheit: %.2f °F\n", (temperatura - 273.15) * 9/5 + 32);
+            printf("\n# Valor digitado: %.2f K\n", temperatura);
+            printf("  - Valor em Celsius: %.2f °C\n", temperatura - 273.15);
+            printf("  - Valor em Fahrenheit: %.2f °F\n", (temperatura - 273.15) * 9/5 + 32);
             break;
         case 2:
-            printf("\nValor digitado: %.2f °C\n", temperatura);
-            printf("Valor em Kelvin: %.2f K\n", temperatura + 273.15);
-            printf("Valor em Fahrenheit: %.2f °F\n", temperatura * 9/5 + 32);
+            printf("\n# Valor digitado: %.2f °C\n", temperatura);
+            printf("  - Valor em Kelvin: %.2f K\n", temperatura + 273.15);
+            printf("  - Valor em Fahrenheit: %.2f °F\n", temperatura * 9/5 + 32);
             break;
         case 3:
-            printf("\nValor digitado: %.2f °F\n", temperatura);
-            printf("Valor em Celsius: %.2f °C\n", (temperatura - 32) * 5/9);
-            printf("Valor em Kelvin: %.2f K\n", ((temperatura - 32) * 5/9) + 273.15);
+            printf("\n# Valor digitado: %.2f °F\n", temperatura);
+            printf("  - Valor em Celsius: %.2f °C\n", (temperatura - 32) * 5/9);
+            printf("  - Valor em Kelvin: %.2f K\n", ((temperatura - 32) * 5/9) + 273.15);
             break;
         default:
             printf("Opção inválida!\n");
