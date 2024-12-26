@@ -7,7 +7,7 @@ void ConversorDeTemperatura();
 void ConversorDeVelocidade();
 void ConversorDeVolume();
 void ConversorDeArmazenamento();
-
+ void ConversorPotCv ();
 int main() {
     setlocale(LC_ALL, "portuguese"); 
     int opcao = 0;
@@ -382,3 +382,74 @@ void ConversorDeArmazenamento () {
 
     printf("# Resultado: %.6lf\n", resultado);
 }
+ void ConversorPotCv ()
+ {
+int main()
+{
+    int opcao;
+    float valor, resultado;
+    char repetir;
+
+    do {
+        printf("Bem-vindo ao Conversor de Potencia!\n");
+        printf("Escolha uma conversao:\n");
+        printf("1. Watts (W) para Quilowatts (kW)\n");
+        printf("2. Watts (W) para Cavalos-vapor (cv)\n");
+        printf("3. Quilowatts (kW) para Watts (W)\n");
+        printf("4. Quilowatts (kW) para Cavalos-vapor (cv)\n");
+        printf("5. Cavalos-vapor (cv) para Watts (W)\n");
+        printf("6. Cavalos-vapor (cv) para Quilowatts (kW)\n");
+        printf("Digite o numero da opcao desejada: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Digite o valor em Watts (W): ");
+                scanf("%f", &valor);
+                resultado = valor / 1000;
+                printf("%.2f W equivale a %.2f kW.\n", valor, resultado);
+                break;
+            case 2:
+                printf("Digite o valor em Watts (W): ");
+                scanf("%f", &valor);
+                resultado = valor / 735.5;
+                printf("%.2f W equivale a %.2f cv.\n", valor, resultado);
+                break;
+            case 3:
+                printf("Digite o valor em Quilowatts (kW): ");
+                scanf("%f", &valor);
+                resultado = valor * 1000;
+                printf("%.2f kW equivale a %.2f W.\n", valor, resultado);
+                break;
+            case 4:
+                printf("Digite o valor em Quilowatts (kW): ");
+                scanf("%f", &valor);
+                resultado = (valor * 1000) / 735.5;
+                printf("%.2f kW equivale a %.2f cv.\n", valor, resultado);
+                break;
+            case 5:
+                printf("Digite o valor em Cavalos-vapor (cv): ");
+                scanf("%f", &valor);
+                resultado = valor * 735.5;
+                printf("%.2f cv equivale a %.2f W.\n", valor, resultado);
+                break;
+            case 6:
+                printf("Digite o valor em Cavalos-vapor (cv): ");
+                scanf("%f", &valor);
+                resultado = (valor * 735.5) / 1000;
+                printf("%.2f cv equivale a %.2f kW.\n", valor, resultado);
+                break;
+            default:
+                printf("Opcao invalida. Tente novamente.\n");
+                break;
+        }
+
+        printf("Deseja fazer outra conversao? (s/n): ");
+        scanf(" %c", &repetir); // O espaço antes de %c consome o caractere de nova linha pendente.
+
+    } while (repetir == 's' || repetir == 'S');
+
+    printf("Obrigada!\n");
+}
+
+ }
