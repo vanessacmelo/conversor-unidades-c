@@ -18,20 +18,20 @@ int main() {
         printf("                                   Conversor De Unidades                                       ");
         printf("\n========================================================================================\n\n");
 
-        printf("# DESCRI��O:\n");
-        printf("  - Escolha o conversor de seu interesse especificando o n�mero \n    entre chaves [XX], dentre as op��es abaixo.\n\n");
+        printf("# DESCRICAO:\n");
+        printf("  - Escolha o conversor de seu interesse especificando o numero \n    entre chaves [XX], dentre as opcoes abaixo.\n\n");
 
-        printf("[1] Conversor de unidades de comprimento (metro, cent�metro e mil�metro)\n");
-        printf("[2] Conversor de unidades de volume (litro, mililitro e metros c�bicos)\n");
+        printf("[1] Conversor de unidades de comprimento (metro, centimetro e milimetro)\n");
+        printf("[2] Conversor de unidades de volume (litro, mililitro e metros cubicos)\n");
         printf("[3] Conversor de unidades de massa (kilograma, grama e tonelada)\n");
         printf("[4] Conversor de unidades de temperatura (celcius, kelvin e fahrenheit)\n");
         printf("[5] Conversor de unidades de velocidade (km/h, m/s e mph)\n");
-        printf("[6] Conversor de unidades de pot�ncia (watt, kilowatt e cavalo-vapor)\n");
-        printf("[7] Conversor de unidades de �rea (metro quadrado, cent�metro )\n");
+        printf("[6] Conversor de unidades de potencia (watt, kilowatt e cavalo-vapor)\n");
+        printf("[7] Conversor de unidades de area (metro quadrado, centimetro )\n");
         printf("[8] Conversor de unidades de tempo (segundo, minuto e hora)\n");
         printf("[9] Conversor de unidades de armazenamento (bits, bytes e kilobytes)\n");
 
-        printf("\nEscolha a op��o: ");
+        printf("\nEscolha a opcao: ");
         scanf("%d", &opcao);
 
         system("clear");
@@ -65,7 +65,7 @@ int main() {
                 ConversorDeArmazenamento();
                 break;
             default:
-                printf("Op��o inv�lida!\n");
+                printf("Opcao invalida!\n");
                 break;
         }
 
@@ -77,7 +77,7 @@ int main() {
     } while (continuar == 's' || continuar == 'S');
 
     printf("\n\n\n\n\n");
-    printf("                                   Fim do programa. Obrigado por us�-lo!\n\n\n\n\n");
+    printf("                                   Fim do programa. Obrigado por usa-lo!\n\n\n\n\n");
 
     return 0;
 }
@@ -90,17 +90,17 @@ void ConversorDeComprimento () {
     printf("                         Conversor De Unidades (Comprimento)                                       ");
     printf("\n========================================================================================\n\n");
 
-    printf("Indique a grandeza do valor que voc� vai inserir.\n");
+    printf("Indique a grandeza do valor que voce vai inserir.\n");
     printf("[1] Metro\n");
-    printf("[2] Cent�metro\n");
-    printf("[3] Mil�metro\n");
+    printf("[2] Centimetro\n");
+    printf("[3] Milimetro\n");
 
     printf("\nDigite a unidade do valor (1-3): ");
-    scanf("%d", &opcao);  // escolhendo a op��o
+    scanf("%d", &opcao);  // escolhendo a opcao
 
 
     printf("Digite o valor da grandeza: ");
-    scanf("%f", &grandeza);  // escolhendo a op��o
+    scanf("%f", &grandeza);  // escolhendo a opcao
 
     system("clear");
 
@@ -111,21 +111,21 @@ void ConversorDeComprimento () {
     switch (opcao) {
         case 1: 
             printf("\n# Valor digitado %.2f em metros\n", grandeza);
-            printf("  - Valor em cent�metros: %.2f cm\n", grandeza * 100);
-            printf("  - Valor em mil�metros: %.2f mm\n", grandeza * 1000);
+            printf("  - Valor em centimetros: %.2f cm\n", grandeza * 100);
+            printf("  - Valor em milimetros: %.2f mm\n", grandeza * 1000);
             break;
         case 2: 
-            printf("\n# Valor digitado %.2f em cent�metros\n", grandeza);
+            printf("\n# Valor digitado %.2f em centimetros\n", grandeza);
             printf("  - Valor em metros: %.2f m\n", grandeza / 100);
-            printf("  - Valor em mil�metros: %.2f mm\n", grandeza * 10);
+            printf("  - Valor em milimetros: %.2f mm\n", grandeza * 10);
             break;
         case 3: 
-            printf("\n# Valor digitado %.2f em mil�metros\n", grandeza);
+            printf("\n# Valor digitado %.2f em milimetros\n", grandeza);
             printf("  - Valor em metros: %.2f m\n", grandeza / 1000);
-            printf("  - Valor em cent�metros: %.2f cm\n", grandeza / 10);
+            printf("  - Valor em centimetros: %.2f cm\n", grandeza / 10);
             break;
         default:
-            printf("Op��o inv�lida!\n");
+            printf("Opcao invalida!\n");
             break;
     }
 }
@@ -138,13 +138,13 @@ void ConversorDeTemperatura () {
     printf("                         Conversor De Unidades (Temperatura)                                      ");
     printf("\n========================================================================================\n\n");
 
-    printf("Indique a grandeza do valor que voc� vai inserir.\n");
+    printf("Indique a grandeza do valor que voce vai inserir.\n");
     printf("[1] Kelvin\n");
     printf("[2] Celsius\n");
     printf("[3] Fahrenheit\n");
 
     printf("\nDigite a unidade do valor (1-3): ");
-    scanf("%d", &opcao);  // escolhendo a op��o
+    scanf("%d", &opcao);  // escolhendo a opcao
 
     printf("Digite o valor da grandeza: ");
     scanf("%f", &temperatura);
@@ -155,25 +155,25 @@ void ConversorDeTemperatura () {
     printf("                         Conversor De Unidades (Temperatura)                                      ");
     printf("\n========================================================================================\n\n");
 
-    //Verifica a op��o e imprime as suas convers�es para as outras unidades
+    //Verifica a opcao e imprime as suas conversoes para as outras unidades
     switch(opcao){
         case 1:
             printf("\n# Valor digitado: %.2f K\n", temperatura);
-            printf("  - Valor em Celsius: %.2f �C\n", temperatura - 273.15);
-            printf("  - Valor em Fahrenheit: %.2f �F\n", (temperatura - 273.15) * 9/5 + 32);
+            printf("  - Valor em Celsius: %.2f °C\n", temperatura - 273.15);
+            printf("  - Valor em Fahrenheit: %.2f °F\n", (temperatura - 273.15) * 9/5 + 32);
             break;
         case 2:
-            printf("\n# Valor digitado: %.2f �C\n", temperatura);
+            printf("\n# Valor digitado: %.2f °C\n", temperatura);
             printf("  - Valor em Kelvin: %.2f K\n", temperatura + 273.15);
-            printf("  - Valor em Fahrenheit: %.2f �F\n", temperatura * 9/5 + 32);
+            printf("  - Valor em Fahrenheit: %.2f °F\n", temperatura * 9/5 + 32);
             break;
         case 3:
-            printf("\n# Valor digitado: %.2f �F\n", temperatura);
-            printf("  - Valor em Celsius: %.2f �C\n", (temperatura - 32) * 5/9);
+            printf("\n# Valor digitado: %.2f °F\n", temperatura);
+            printf("  - Valor em Celsius: %.2f °C\n", (temperatura - 32) * 5/9);
             printf("  - Valor em Kelvin: %.2f K\n", ((temperatura - 32) * 5/9) + 273.15);
             break;
         default:
-            printf("Op��o inv�lida!\n");
+            printf("Opcao invalida!\n");
             break;
     }
 }
@@ -186,16 +186,16 @@ void ConversorDeVelocidade () {
     printf("                         Conversor De Unidades (Velocidade)                                       ");
     printf("\n========================================================================================\n\n");
 
-    printf("Indique a grandeza do valor que voc� vai inserir.\n");
+    printf("Indique a grandeza do valor que voce vai inserir.\n");
     printf("[1] m/s\n");
     printf("[2] Km/h\n");
     printf("[3] Mph\n");
 
-    //Pede ao usu�rio a qual a unidade inicial
+    //Pede ao usuario a qual a unidade inicial
     printf("\nDigite a unidade do valor (1-3): ");
     scanf("%d", &opcao);
 
-    //Pede ao usu�rio a velocidade
+    //Pede ao usuario a velocidade
     printf("Digite o valor da grandeza: ");
     scanf("%f", &velocidade);
 
@@ -205,7 +205,7 @@ void ConversorDeVelocidade () {
     printf("                         Conversor De Unidades (Velocidade)                                       ");
     printf("\n========================================================================================\n\n");
 
-    //Verifica a op��o e imprime as suas convers�es para as outras unidades
+    //Verifica a opcao e imprime as suas conversoes para as outras unidades
     switch(opcao){
         case 1:
             printf("\n# Valor digitado: %.2f m/s\n", velocidade);
@@ -223,7 +223,7 @@ void ConversorDeVelocidade () {
             printf("  - Valor em Km/h: %.2f km/h\n", velocidade * 1.609);
             break;
         default:
-            printf("Op��o inv�lida!\n");
+            printf("Opcao invalida!\n");
             break;
     }
 }
@@ -237,7 +237,7 @@ void ConversorDeVolume () {
     printf("                         Conversor De Unidades (Volume)                                       ");
     printf("\n========================================================================================\n\n");
 
-    printf("Indique a grandeza do valor que voc� vai inserir.\n");
+    printf("Indique a grandeza do valor que voce vai inserir.\n");
     printf("[1] Mililitro (ml)\n");
     printf("[2] Centilitro (cl)\n");
     printf("[3] Decilitro (dl)\n");
@@ -245,13 +245,13 @@ void ConversorDeVolume () {
     printf("[5] Decalitro (dal)\n");
     printf("[6] Hectolitro (hl)\n");
     printf("[7] Quilolitro (kl)\n");
-    printf("[8] Dec�metro c�bico (dm�)\n");
-    printf("[9] Cent�metro c�bico (cm�)\n");
-    printf("[10] Mil�metro c�bico (mm�)\n");
-    printf("[11] Dec�metro c�bico (dam�)\n");
-    printf("[12] Hect�metro c�bico (hm�)\n");
-    printf("[13] Quil�metro c�bico (km�)\n");
-    printf("[14] Metro c�bico (m�)\n");
+    printf("[8] Decimetro cubico (dm³)\n");
+    printf("[9] Centimetro cubico (cm³)\n");
+    printf("[10] Milimetro cubico (mm³)\n");
+    printf("[11] Decimetro cubico (dam³)\n");
+    printf("[12] Hectometro cubico (hm³)\n");
+    printf("[13] Quilometro cubico (km³)\n");
+    printf("[14] Metro cubico (m³)\n");
 
     printf("\nDigite a unidade do valor para converter (1-14): ");
     scanf("%d", &choice);
@@ -296,34 +296,34 @@ void ConversorDeVolume () {
             break;
         case 8:
             value = n * 1000; 
-            printf("%lf dm�\n", value);
+            printf("%lf dm³\n", value);
             break;
         case 9:
             value = n * 1000000;  
-            printf("%lf cm�\n", value);
+            printf("%lf cm³\n", value);
             break;
         case 10:
             value = n * 1000000000;  
-            printf("%lf mm�\n", value);
+            printf("%lf mm³\n", value);
             break;
         case 11:
             value = n / 1000;  
-            printf("%lf dam�\n", value);
+            printf("%lf dam³\n", value);
             break;
         case 12:
             value = n / 1000000;  
-            printf("%lf hm�\n", value);
+            printf("%lf hm³\n", value);
             break;
         case 13:
             value = n / 1000000000;  
-            printf("%lf km�\n", value);
+            printf("%lf km³\n", value);
             break;
         case 14:
             value = n;  
-            printf("%lf m�\n", value);
+            printf("%lf m³\n", value);
             break;
         default:
-            printf("Op��o inv�lida!\n");
+            printf("Opcao invalida!\n");
             break;
     }
 }
@@ -336,7 +336,7 @@ void ConversorDeArmazenamento () {
     printf("                         Conversor De Unidades (Armazenamento)                                      ");
     printf("\n========================================================================================\n\n");
 
-    printf("Indique a grandeza do valor que voc� vai inserir.\n");
+    printf("Indique a grandeza do valor que voce vai inserir.\n");
     printf("[1] Bits\n");
     printf("[2] Bytes\n");
     printf("[3] Kilobytes (KB)\n");
@@ -348,18 +348,18 @@ void ConversorDeArmazenamento () {
     scanf("%d", &de);
 
     if (de < 1 || de > 6) {
-        printf("\nOp��o inv�lida!\n");
+        printf("\nOpcao invalida!\n");
         return;
     }
 
     printf("Digite o valor da grandeza: ");
     scanf("%lf", &valor);
 
-    printf("Escolha para qual unidade voc� deseja converter (1-6): ");
+    printf("Escolha para qual unidade voce deseja converter (1-6): ");
     scanf("%d", &para);
 
     if (para < 1 || para > 6) {
-        printf("\nOp��o inv�lida!\n");
+        printf("\nOpcao invalida!\n");
         return; 
     }
 
