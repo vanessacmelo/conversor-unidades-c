@@ -6,7 +6,7 @@ void ConversorDeComprimento();
 void ConversorDeTemperatura();
 void ConversorDeVelocidade();
 void ConversorDeVolume();
-void ConversorDeArea();
+void ConversorDeArea(); 
 void ConversorDeArmazenamento();
 void ConversorPotCv ();
 
@@ -231,6 +231,7 @@ void ConversorDeVelocidade () {
 }
 
 void ConversorDeArea() {
+
     float metrosQuadrados, centimetrosQuadrados;
     int opcao;
 
